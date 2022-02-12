@@ -33,15 +33,7 @@ function generatePassword() {
     novaSenha = pass;
 }
 
-
-const newPassword = document.querySelector('.copy-password');
-
-newPassword.addEventListener('click', () => {
-    setTimeout(copyPassword, 3000);
-})
-
 function copyPassword() {
     navigator.clipboard.writeText(novaSenha);
     console.log(novaSenha);
-    alert('Senha copiada com sucesso')
 }
