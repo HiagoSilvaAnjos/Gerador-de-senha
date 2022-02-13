@@ -10,6 +10,7 @@
     <title>Gerador de senhas</title>
     <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="./assets/Meuicone.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -29,21 +30,22 @@
 
     </main>
 
-    <div onclick="copyPassword();" id="container-password" class="container-password hide copy-password">
+    <div onclick="copyPassword();" id="container-password" class="container-password hide show-popup">
         <span class="title">Sua senha gerada foi:</span>
         <span id="password" class="password"></span>
-        <span class="tooltip">Clique na senha para copiar. 👆</span>
+        <span class="tooltip">Clique na senha para copiar.</span>
     </div>
-    <!-- popup (Em breve...)-->
-    <!-- <div class="popup-wrapper">
+    <!-- popup -->
+    <div class="popup-wrapper">
         <div class="popup">
-            <div class="popup-close"><i class='bx bx-exit'></i></div>
             <div class="popup-content">
-                <h2>O vencedor foi:</h2>
-                <p></p>
+                <div class="copy-success">
+                    <i class='bx bx-check-double bx-tada'></i>
+                </div>
+                <p>Senha copiada com sucesso!</p>
             </div>
         </div>
-    </div> -->
+    </div>
     <script src="./javascript/scripts.js"></script>
 
 </body>

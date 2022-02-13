@@ -6,6 +6,9 @@ let password = document.querySelector("#password");
 
 let containerPassword = document.querySelector("#container-password");
 
+let showPopupElement = document.querySelector(".show-popup");
+let popup = document.querySelector(".popup-wrapper");
+
 
 let charset = "abcdefghijklmnopkrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@";
 
@@ -37,3 +40,13 @@ function copyPassword() {
     navigator.clipboard.writeText(novaSenha);
     console.log(novaSenha);
 }
+
+showPopupElement.addEventListener('click', () => {
+    popup.style.display = 'block';
+    setTimeout(closePopup, 3000);
+
+    function closePopup() {
+        popup.style.display = 'none';
+    }
+
+})

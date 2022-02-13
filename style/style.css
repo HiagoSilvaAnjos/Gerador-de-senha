@@ -1,118 +1,188 @@
 * {
-    margin: 0;
-    font-family: sans-serif;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-
 body {
-    background-color: #18181b;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  background-color: #18181b;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .logo {
-    max-width: 600px;
-    margin-bottom: 24px;
+  max-width: 600px;
+  margin-bottom: 24px;
 }
 
 .container {
-    max-width: 480px;
-    margin: 14px 0;
+  max-width: 480px;
+  margin: 14px 0;
 }
-
 
 .container span {
-    color: #fff;
-    font-size: 22px;
+  color: #fff;
+  font-size: 22px;
 }
-
 
 .slider {
-    -webkit-appearance: none;
-    width: 100%;
-    border-radius: 5px;
-    background: #dfdfdf;
-    height: 18px;
-    outline: none;
-    margin-top: 8px;
+  -webkit-appearance: none;
+  width: 100%;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  height: 20px;
+  outline: none;
+  margin-top: 8px;
 }
-
 
 .button-cta {
-    height: 40px;
-    background-color: #3EB72B;
-    border: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 40px;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 18px;
+  height: 40px;
+  background-color: #3eb72b;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 40px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.5s;
 }
 
+.button-cta:hover {
+  background-color: #30d616;
+  transform: scale(1.03);
+}
 
 .container-password {
-    max-width: 480px;
-    margin: 14px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
+  max-width: 480px;
+  margin: 14px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .title {
-    text-align: center;
-    color: #ffffff;
-    font-size: 28px;
-    margin-top: 20px;
-    margin-bottom: 8px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
 
 .password {
-    height: 60px;
-    background-color: rgba(0,0,0, 0.40);
-    color: #ffffff;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #313131;
-    transition: transform 0.5s;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #313131;
+  transition: transform 0.5s;
 }
 
 .password:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 
 .tooltip {
-    color: #ffffff;
-    position: relative;
-    top: 20px;
-    padding: 6px 8px;
-    background: rgb(15, 15, 15);
-    text-align: center;
-    font-size: 16px;
-    border-radius: 6px;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
+  color: #ffffff;
+  position: relative;
+  top: 20px;
+  padding: 10px 0px;
+  background: rgb(15, 15, 15);
+  text-align: center;
+  font-size: 16px;
+  border-radius: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
-
 .hide {
-    display: none;
+  display: none;
 }
 
 .container-password:hover .tooltip {
-    visibility: visible;
-    bottom: 50px;
-    opacity: 1;
+  visibility: visible;
+  bottom: 50px;
+  opacity: 5;
+}
+
+/* Popup */
+
+.popup-wrapper {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.664);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  font-family: arial, sans-serif;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 12% auto;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: rgb(33, 34, 34);
+  position: relative;
+  animation: slideResult 2s;
+}
+
+@keyframes slideResult {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.copy-success {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-success i {
+  font-size: 6em;
+  color: rgb(1, 212, 1);
+}
+
+.popup-content p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+@media (max-width: 500px) {
+  .logo {
+    width: 90%;
+  }
+
+  .container {
+    max-width: 80%;
+  }
+
+  .container-password {
+    width: 80%;
+  }
+
+  .popup {
+    margin: 60% auto;
+  }
 }
